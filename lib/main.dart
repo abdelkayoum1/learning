@@ -5,6 +5,7 @@ import 'package:fooditem/core/utile/approute.dart';
 import 'package:fooditem/feature/data/homerepo/home_repo/home_repo.dart';
 import 'package:fooditem/feature/data/homerepo/home_repo/home_repo_iplm.dart';
 import 'package:fooditem/feature/presentation/login/cubit/cubit/login_cubit_cubit.dart';
+import 'package:fooditem/feature/presentation/navigation_bav/cubit/navigate_cubit_cubit.dart';
 import 'package:fooditem/splash.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -20,17 +21,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => LoginCubitCubit(HomeRepoIplm())),
-      ],
-      child: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-        // home: Splash(),
-        routerConfig: Approute.router,
-      ),
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      // home: Splash(),
+      routerConfig: Approute.router,
     );
   }
 }

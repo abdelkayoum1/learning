@@ -18,10 +18,11 @@ class LoginCubitCubit extends Cubit<LoginCubitState> {
 
       resultat.fold(
         (failure) {
+          print(failure.error);
           emit(LoginCubitfailure(error: failure.error.toString()));
         },
         (user) {
-          print('succes');
+          print("succes");
           emit(LoginCubitsucces(email: email, password: password));
         },
       );

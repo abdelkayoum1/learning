@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fooditem/core/utile/approute.dart';
 import 'package:fooditem/core/utile/text_style.dart';
 import 'package:fooditem/core/widget/button.dart';
 import 'package:fooditem/core/widget/customer_text_fieled.dart';
@@ -9,6 +10,7 @@ import 'package:fooditem/feature/presentation/login/screen/widget/googleetfacebo
 
 import 'package:fooditem/feature/presentation/login/screen/widget/stack_image.dart';
 import 'package:fooditem/feature/presentation/sign%20up/cubit/cubit/signin_cubit_cubit.dart';
+import 'package:go_router/go_router.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -58,6 +60,8 @@ class _SignInState extends State<SignIn> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(content: Text(state.error)),
                             );
+                          } else if (state is SignCubitsucces) {
+                            GoRouter.of(context).push(Approute.loginhome);
                           }
                         },
                         builder: (context, state) {

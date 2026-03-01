@@ -18,8 +18,8 @@ class HomeRepoIplm implements HomeRepo {
   }) async {
     try {
       AuthResponse reponse = await supabase.auth.signInWithPassword(
-        password: password,
         email: email,
+        password: password,
       );
       usere = reponse.user;
       if (usere != null) {
@@ -29,6 +29,7 @@ class HomeRepoIplm implements HomeRepo {
       }
     } catch (e) {
       if (e is AuthException) {
+        print(e.message);
         return Left(FailureServer(error: e.message));
       }
       return Left(FailureServer(error: e.toString()));
@@ -42,8 +43,8 @@ class HomeRepoIplm implements HomeRepo {
   }) async {
     try {
       AuthResponse reponse = await supabase.auth.signUp(
-        password: password,
         email: email,
+        password: password,
       );
       usere = reponse.user;
       if (usere != null) {
