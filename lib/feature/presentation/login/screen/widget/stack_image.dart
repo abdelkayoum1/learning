@@ -30,7 +30,7 @@ class Stackimage extends StatelessWidget {
                   style: TextStyle(color: Colors.yellow, fontSize: 32),
                 ),
                 Text(
-                  'Login',
+                  'Sign In',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,

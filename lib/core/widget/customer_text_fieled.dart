@@ -4,9 +4,12 @@ class CustomerTextFieled extends StatelessWidget {
   final String title;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
-
+  final TextEditingController? controller;
+  final String? Function(String?)? validator;
   const CustomerTextFieled({
     super.key,
+    this.controller,
+    this.validator,
     required this.title,
     this.suffixIcon,
     this.prefixIcon,
@@ -14,7 +17,9 @@ class CustomerTextFieled extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      controller: controller,
+
       decoration: InputDecoration(
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
