@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Stackimage extends StatelessWidget {
-  const Stackimage({super.key});
+  final String title;
+  const Stackimage({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class Stackimage extends StatelessWidget {
                   style: TextStyle(color: Colors.yellow, fontSize: 32),
                 ),
                 Text(
-                  'Sign In',
+                  title,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,

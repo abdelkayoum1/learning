@@ -33,7 +33,7 @@ class _LoginHomeState extends State<LoginHome> {
         child: Scaffold(
           body: Column(
             children: [
-              Stackimage(),
+              Stackimage(title: 'Login'),
               SizedBox(height: 3),
               Expanded(
                 child: Container(
@@ -144,18 +144,7 @@ class _LoginHomeState extends State<LoginHome> {
                                   ),
                                   title: 'Entrer your Password',
                                 ),
-                                CustomerTextFieled(
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return 'please remplire your champ password';
-                                    }
 
-                                    return null;
-                                  },
-                                  controller: name,
-
-                                  title: 'Entrer name',
-                                ),
                                 SizedBox(height: 5),
                                 Align(
                                   alignment: Alignment.bottomRight,
@@ -180,7 +169,7 @@ class _LoginHomeState extends State<LoginHome> {
                                             context
                                                 .read<LoginCubitCubit>()
                                                 .getlogin(
-                                                  name: name.text.trim(),
+                                                  // name: name.text.trim(),
                                                   email: email.text.trim(),
                                                   password: password.text
                                                       .trim(),

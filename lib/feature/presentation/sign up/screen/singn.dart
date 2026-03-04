@@ -20,9 +20,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  late TextEditingController email = TextEditingController();
-  late TextEditingController password = TextEditingController();
-  late TextEditingController confirmepassword = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+  // TextEditingController confirmepassword = TextEditingController();
   final TextEditingController name = TextEditingController();
   GlobalKey<FormState> key = GlobalKey<FormState>();
   @override
@@ -34,7 +34,7 @@ class _SignInState extends State<SignIn> {
         child: Scaffold(
           body: Column(
             children: [
-              Stackimage(),
+              Stackimage(title: 'SignIn'),
               SizedBox(height: 10),
               Expanded(
                 child: Container(
@@ -133,7 +133,7 @@ class _SignInState extends State<SignIn> {
                                   style: TextStylee.textfieled,
                                 ),
                                 SizedBox(height: 5),
-
+                                /*
                                 CustomerTextFieled(
                                   controller: confirmepassword,
                                   prefixIcon: Icon(
@@ -148,13 +148,16 @@ class _SignInState extends State<SignIn> {
                                   ),
                                   title: 'Confirme Password',
                                 ),
+                                */
                                 SizedBox(height: 10),
                                 CustomerTextFieled(
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return 'please remplir cette champe';
                                     }
+                                    return null;
                                   },
+
                                   controller: name,
                                   prefixIcon: Icon(
                                     Icons.lock,

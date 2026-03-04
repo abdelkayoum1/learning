@@ -12,15 +12,12 @@ class CourseCubit extends Cubit<CourseState> {
     try {
       emit(Coursestateloading());
       var res = await homerepo.getcourse();
-      print(res);
+      //print(res);
       res.fold(
         (failure) {
           emit(Coursestatefailure(error: failure.error.toString()));
         },
         (course) {
-          print('succes');
-          print(course);
-          print(course.first.title);
           emit(Coursestatesucces(course: course));
         },
       );
