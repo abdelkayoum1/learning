@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fooditem/feature/data/homerepo/home_repo/home_repo_iplm.dart';
 import 'package:fooditem/feature/data/model/model_course.dart';
+import 'package:fooditem/feature/my_ourse.dart/presentation/screen/my_course.dart';
+import 'package:fooditem/feature/myvideo/presentation/screen/my_video.dart';
 import 'package:fooditem/feature/presentation/featue_detail/feature_detail.dart';
 import 'package:fooditem/feature/presentation/feature_home_book/cubit/course_cubit.dart';
 import 'package:fooditem/feature/presentation/login/screen/login_home.dart';
@@ -19,6 +21,7 @@ class Approute {
   static const featuredetail = '/featuredetail';
 
   static const book = '/book';
+  static const myvideo = '/myveideo';
   static final router = GoRouter(
     routes: [
       //  GoRoute(path: '/', builder: (context, state) => Splash()),
@@ -29,7 +32,9 @@ class Approute {
         path: buttonbar,
         builder: (context, state) => ButtonNavigationBar(),
       ),
+
       //   GoRoute(path: book, builder: (context, state) => Booke()),
+      GoRoute(path: myvideo, builder: (context, state) => MyVideo()),
       GoRoute(
         path: featuredetail,
         builder: (context, state) => BlocProvider(
