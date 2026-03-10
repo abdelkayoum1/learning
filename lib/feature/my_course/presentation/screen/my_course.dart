@@ -74,39 +74,42 @@ class MyCourse extends StatelessWidget {
                                         Icon(Icons.error),
                                   ),
                                   SizedBox(width: 10),
-                                  Column(
-                                    // crossAxisAlignment: CrossAxisAlignment.center,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        course.title.toString(),
-                                        style: TextStyle(
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w700,
-                                          color: Color(0xff111827),
-                                        ),
-                                      ),
-                                      SizedBox(height: 20),
-                                      ElevatedButton(
-                                        onPressed: () {
-                                          GoRouter.of(context).push(
-                                            Approute.myvideo,
-                                            extra: state.cours[index].id,
-                                          );
-                                        },
-                                        child: Text(
-                                          'complete',
+                                  SingleChildScrollView(
+                                    child: Column(
+                                      // crossAxisAlignment: CrossAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          course.title.toString(),
                                           style: TextStyle(
-                                            fontSize: 14,
+                                            fontSize: 18,
                                             fontWeight: FontWeight.w700,
-                                            color: Color(0xffFFFFFF),
+                                            color: Color(0xff111827),
                                           ),
                                         ),
-                                        style: TextButton.styleFrom(
-                                          backgroundColor: Colors.blue,
+                                        SizedBox(height: 20),
+                                        ElevatedButton(
+                                          onPressed: () {
+                                            GoRouter.of(context).push(
+                                              Approute.myvideo,
+                                              extra: state.cours[index].id,
+                                            );
+                                          },
+                                          child: Text(
+                                            'complete',
+                                            style: TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w700,
+                                              color: Color(0xffFFFFFF),
+                                            ),
+                                          ),
+                                          style: TextButton.styleFrom(
+                                            backgroundColor: Colors.blue,
+                                          ),
                                         ),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),

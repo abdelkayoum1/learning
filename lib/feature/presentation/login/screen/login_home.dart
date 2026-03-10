@@ -25,6 +25,7 @@ class _LoginHomeState extends State<LoginHome> {
   TextEditingController email = TextEditingController();
   TextEditingController name = TextEditingController();
   GlobalKey<FormState> key = GlobalKey<FormState>();
+  bool ischaked = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -98,6 +99,7 @@ class _LoginHomeState extends State<LoginHome> {
                                 SizedBox(height: 5),
 
                                 CustomerTextFieled(
+                                  obscureText: false,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return 'please remplire your champ email';
@@ -122,6 +124,7 @@ class _LoginHomeState extends State<LoginHome> {
                                 SizedBox(height: 5),
 
                                 CustomerTextFieled(
+                                  obscureText: ischaked ? true : false,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
                                       return 'please remplire your champ password';
@@ -131,16 +134,41 @@ class _LoginHomeState extends State<LoginHome> {
                                     }
                                     return null;
                                   },
+
                                   controller: password,
-                                  prefixIcon: Icon(
+                                  prefixIcon: IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        ischaked = !ischaked;
+                                      });
+                                    },
+                                    icon: Icon(
+                                      Icons.lock,
+                                      weight: 16,
+                                      size: 14,
+                                      color: Color(0xff3B71D8),
+                                    ),
+                                  ),
+                                  /*
+                                  Icon(
                                     Icons.lock,
                                     weight: 16,
                                     size: 14,
                                     color: Color(0xff3B71D8),
                                   ),
-                                  suffixIcon: Icon(
-                                    Icons.visibility,
-                                    color: Color(0xff94A3B8),
+                                  */
+                                  suffixIcon: IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        ischaked = !ischaked;
+                                      });
+                                    },
+                                    icon: Icon(
+                                      ischaked
+                                          ? Icons.visibility_off
+                                          : Icons.visibility,
+                                      color: Color(0xff94A3B8),
+                                    ),
                                   ),
                                   title: 'Entrer your Password',
                                 ),

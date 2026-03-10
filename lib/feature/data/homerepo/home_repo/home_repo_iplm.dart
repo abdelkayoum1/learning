@@ -121,13 +121,17 @@ class HomeRepoIplm implements HomeRepo {
   Future<Either<Failure, List<Modelname>>> getname() async {
     try {
       List<Modelname> list = [];
-      final res = await supabase.from('users').select('(*)');
+      final res = await supabase
+          .from('users')
+          .select('(*)')
+          .eq('id', supabase.auth.currentUser!.id)
+          .single();
       print(res.length);
       // list = [];
-      for (var item in res) {
-        print(item);
-        list.add(Modelname.fromJson(item));
-      }
+      // for (var item in res) {
+      print(res);
+      list.add(Modelname.fromJson(res));
+      //}
 
       return Right(list);
     } catch (e) {

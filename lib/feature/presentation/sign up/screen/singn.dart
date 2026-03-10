@@ -4,6 +4,7 @@ import 'package:fooditem/core/utile/approute.dart';
 import 'package:fooditem/core/utile/text_style.dart';
 import 'package:fooditem/core/widget/button.dart';
 import 'package:fooditem/core/widget/customer_text_fieled.dart';
+import 'package:fooditem/core/widget/snackbar.dart';
 import 'package:fooditem/feature/data/homerepo/home_repo/home_repo_iplm.dart';
 import 'package:fooditem/feature/presentation/login/screen/widget/dividerr.dart';
 import 'package:fooditem/feature/presentation/login/screen/widget/googleetfacebooketiphone.dart';
@@ -99,6 +100,16 @@ class _SignInState extends State<SignIn> {
                                 SizedBox(height: 5),
 
                                 CustomerTextFieled(
+                                  obscureText: false,
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      snackbar(
+                                        context,
+                                        text: 'please remplir cette champ',
+                                      );
+                                    }
+                                    return null;
+                                  },
                                   controller: email,
                                   prefixIcon: Icon(
                                     size: 14,
@@ -114,7 +125,18 @@ class _SignInState extends State<SignIn> {
                                 SizedBox(height: 5),
 
                                 CustomerTextFieled(
+                                  obscureText: false,
+                                  validator: (value) {
+                                    if (value == null || value.isEmpty) {
+                                      snackbar(
+                                        context,
+                                        text: 'please remplir cette champ',
+                                      );
+                                    }
+                                    return null;
+                                  },
                                   controller: password,
+
                                   prefixIcon: Icon(
                                     Icons.lock,
                                     weight: 16,
@@ -128,10 +150,7 @@ class _SignInState extends State<SignIn> {
                                   title: 'Entrer your Password',
                                 ),
                                 SizedBox(height: 5),
-                                Text(
-                                  'Confirmer_password',
-                                  style: TextStylee.textfieled,
-                                ),
+                                Text('Name', style: TextStylee.textfieled),
                                 SizedBox(height: 5),
                                 /*
                                 CustomerTextFieled(
@@ -151,24 +170,19 @@ class _SignInState extends State<SignIn> {
                                 */
                                 SizedBox(height: 10),
                                 CustomerTextFieled(
+                                  obscureText: false,
                                   validator: (value) {
                                     if (value == null || value.isEmpty) {
-                                      return 'please remplir cette champe';
+                                      snackbar(
+                                        context,
+                                        text: 'please remplir cette champ',
+                                      );
                                     }
                                     return null;
                                   },
 
                                   controller: name,
-                                  prefixIcon: Icon(
-                                    Icons.lock,
-                                    weight: 16,
-                                    size: 14,
-                                    color: Color(0xff3B71D8),
-                                  ),
-                                  suffixIcon: Icon(
-                                    Icons.visibility,
-                                    color: Color(0xff94A3B8),
-                                  ),
+
                                   title: 'name',
                                 ),
 

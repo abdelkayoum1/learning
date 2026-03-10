@@ -45,6 +45,7 @@ class Featurecontainerappbar extends StatelessWidget {
                       Text('Welcome to Cs Academy'),
                       SizedBox(height: 10),
                       CustomerTextFieled(
+                        obscureText: false,
                         filled: true,
                         fillColor: Colors.white,
                         prefixIcon: Icon(Icons.search),

@@ -8,10 +8,12 @@ class CustomerTextFieled extends StatelessWidget {
   final Color? color;
   final Color? fillColor;
   final bool? filled;
+  final bool obscureText;
   final String? Function(String?)? validator;
   const CustomerTextFieled({
     super.key,
     this.controller,
+    required this.obscureText,
     this.fillColor,
     this.filled,
     this.color,
@@ -24,6 +26,7 @@ class CustomerTextFieled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      obscureText: obscureText,
       style: TextStyle(backgroundColor: color),
       controller: controller,
 
