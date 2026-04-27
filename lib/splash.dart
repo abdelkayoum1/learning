@@ -30,7 +30,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     ).animate(animate);
     animate.forward();
 
-    gorouterofromloginhome();
+    // gorouterofromloginhome();
   }
 
   void gorouterofromloginhome() {
@@ -57,12 +57,16 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
                     width: 96,
                     height: 96,
                     decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(color: Colors.black, blurRadius: 4),
+                      ],
+                      image: DecorationImage(
+                        fit: BoxFit.fill,
+
+                        image: AssetImage('assets/learning.png'),
+                      ),
                       borderRadius: BorderRadius.circular(20),
                       color: const Color.fromARGB(255, 211, 192, 16),
-                    ),
-                    child: Image.asset(
-                      'assets/Icon (1).png',
-                      color: Colors.white,
                     ),
                   ),
                   SizedBox(height: 20),
