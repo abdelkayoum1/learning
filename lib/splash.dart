@@ -30,7 +30,7 @@ class _SplashState extends State<Splash> with SingleTickerProviderStateMixin {
     ).animate(animate);
     animate.forward();
 
-    // gorouterofromloginhome();
+    gorouterofromloginhome();
   }
 
   void gorouterofromloginhome() {
