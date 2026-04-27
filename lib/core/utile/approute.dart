@@ -15,7 +15,7 @@ import 'package:fooditem/splash.dart';
 import 'package:go_router/go_router.dart';
 
 class Approute {
-  static const loginhome = '/';
+  static const loginhome = '/login';
 
   static const signhome = '/signhome';
   static const buttonbar = '/ButtonNavigationBar';
@@ -26,7 +26,7 @@ class Approute {
   static const playervideo = '/playervideo';
   static final router = GoRouter(
     routes: [
-      //  GoRoute(path: '/', builder: (context, state) => Splash()),
+      GoRoute(path: '/', builder: (context, state) => Splash()),
       GoRoute(path: loginhome, builder: (context, state) => LoginHome()),
       GoRoute(path: signhome, builder: (context, state) => SignIn()),
 
